@@ -10,15 +10,17 @@ Framework RapidPayload - Metasploit Payload Generator
  
  * Apktool
  
+ * Python3
+ 
 <h3> Execution: </h3>
 
 * git clone https://github.com/AngelSecurityTeam/RapidPayload
 
 * cd RapidPayload
 
-* 
+* bash install.sh
 
-* 
+* python3 RapidPayload.py
 
 <h3>AngelSecurityTeam</h3>
 
