@@ -1,21 +1,22 @@
 # RapidPayload
+
 Framework RapidPayload - Metasploit Payload Generator 
 
 <h3> Requirements </h3>
- * OpenJDK 8 ++
+ 
+ * OpenJDK 8 ++ (JAVA)
  
  * Metasploit
+ 
+ * Apktool
+ 
 <h3> Execution: </h3>
-
-* apt-get install python3
-
-* apt-get install git 
 
 * git clone https://github.com/AngelSecurityTeam/RapidPayload
 
 * cd RapidPayload
 
-*
+* 
 
 * 
 
