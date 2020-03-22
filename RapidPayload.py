@@ -1,7 +1,7 @@
 #!/usr/bin/python
 #-*- coding: utf-8 -*-
 #https://github.com/AngelSecurityTeam/RapidPayload
-import os,re
+import os
 import platform
 from time import sleep
 cyan= '\033[36m'
