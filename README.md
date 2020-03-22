@@ -4,7 +4,7 @@ Framework RapidPayload - Metasploit Payload Generator
 
 <h3> Requirements </h3>
  
- * OpenJDK 8 ++ (JAVA)
+ * OpenJDK 8 (JAVA) , or higher versions .
  
  * Metasploit
  
