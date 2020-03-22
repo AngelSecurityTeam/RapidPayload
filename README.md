@@ -25,7 +25,7 @@ Framework RapidPayload - Metasploit Payload Generator
 <img src="https://github.com/AngelSecurityTeam/RapidPayload/blob/master/Image/Android.png">
 
 
-<img src="https://github.com/AngelSecurityTeam/RapidPayload/blob/master/Image/Linux.png">
+<img src="https://github.com/AngelSecurityTeam/RapidPayload/blob/master/Image/linux.png">
 
 <img src="https://github.com/AngelSecurityTeam/RapidPayload/blob/master/Image/ngrok_py.png">
 
