@@ -34,7 +34,7 @@ Framework RapidPayload - Metasploit Payload Generator
 
 * Bugtraq
 
-* AcrhStrike
+* ArhStrike
 
 * Cyborg Linux
 
