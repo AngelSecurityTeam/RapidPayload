@@ -22,6 +22,26 @@ Framework RapidPayload - Metasploit Payload Generator
 
 * python3 RapidPayload.py
 
+<h3> Linux: </h3>
+
+* Kali Linux
+
+* Parrot Security OS
+
+* BlackArch Linux
+
+* BackBox
+
+* Bugtraq
+
+* AcrhStrike
+
+* Cyborg Linux
+
+* Matriux
+
+* Demon Linux
+
 <h3>AngelSecurityTeam</h3>
 
 <img src="https://github.com/AngelSecurityTeam/RapidPayload/blob/master/Image/Fnew.png">
