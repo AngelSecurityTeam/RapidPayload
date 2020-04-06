@@ -206,7 +206,7 @@ def legit(platform, type):
 def Normal(platform, type):
     lhost = input("\n{0}{1}RapidPayload:~/LHOST# {2}".format(cyan, bold, end))
     lport = input("\n{0}{1}RapidPayload:~/LPORT# {2}".format(cyan, bold, end))
-    newname = input("\n{0}{1}RapidPayload:~/NewFileName# {2}".format(cyan, bold, end))                    
+    newname = input("\n{0}{1}RapidPayload:~/FileName# {2}".format(cyan, bold, end))                    
     if platform == 'Android' and type == '1':
         payload= 'android/meterpreter/reverse_http'
         ext= '.apk'
