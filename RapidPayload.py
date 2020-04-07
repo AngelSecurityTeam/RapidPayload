@@ -342,7 +342,7 @@ def localhost():
     index_defaultlocalhost()
     #http.server 80
     os.system("python3 -m http.server 80 > .server 2> /dev/null &")          		
-    print("\n\033[1m\033[36mRapidPayload:~/LinkNgrok# \033[1m\033[0m"+"http://localhost:80")
+    print("\n\033[1m\033[36mRapidPayload:~/Link_LocalHost# \033[1m\033[0m"+"http://localhost:80")
    
     print(" ")
 
