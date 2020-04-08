@@ -42,6 +42,8 @@ Framework RapidPayload - Metasploit Payload Generator
 
 * Demon Linux
 
+* Tsurugi Linux
+
 <h3>AngelSecurityTeam</h3>
 
 <img src="https://github.com/AngelSecurityTeam/RapidPayload/blob/master/Image/NewV.png">
