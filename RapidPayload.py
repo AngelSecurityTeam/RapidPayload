@@ -234,7 +234,6 @@ def Ngrok():
     
         with open("index.html", "w") as file:
             file.write("""
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -250,13 +249,9 @@ def Ngrok():
   cursor: pointer;
   font-size: 20px;
 }
-
-
 .btn:hover {
   background-color: RoyalBlue;
 }
-
-
 </style>	
 <title></title>
 <script src="http://code.jquery.com/jquery-3.2.1.min.js"></script>
@@ -300,7 +295,6 @@ def localhost():
     
         with open("index.html", "w") as file:
             file.write("""
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -316,13 +310,9 @@ def localhost():
   cursor: pointer;
   font-size: 20px;
 }
-
-
 .btn:hover {
   background-color: RoyalBlue;
 }
-
-
 </style>	
 <title></title>
 <script src="http://code.jquery.com/jquery-3.2.1.min.js"></script>
@@ -357,14 +347,14 @@ def MSF():
      
 def RapidP():
     
-    select = input('\n{2}{0}{2}[{1}{2}1{0}]{2}{1} {2}Windows\n{0}{2}[{1}{2}2{2}{0}]{1} {2}Linux\n{0}{2}[{1}{2}3{2}{0}]{1} {2}Android\n{0}{2}[{1}{2}{2}4{0}]{1} {2}Python\n{0}{2}[{1}{2}{2}5{0}]{1} {2}MacOS\n{0}{2}[{1}{2}{2}6{0}]{1} {2}Java\n{0}{2}[{1}{2}{2}7{0}]{1} {2}Apple_ios\n{0}{2}[{1}{2}{2}8{0}]{1} {2}Connect_Ngrok\n{0}{2}[{1}{2}{2}9{0}]{1} {2}Connect_LocalHost\n{0}{2}[{1}{2}{2}10{0}]{1} {2}Connect_MSF\n{0}{0}[{1}{2}0{0}]{1} {2}Exit\n\n{0}{2}RapidPayload:~#{1} '.format(cyan, end, bold))
+    select = input('\n{2}{0}{2}[{1}{2}1{0}]{2}{1} {2} Windows\n{0}{2}[{1}{2}2{2}{0}]{1} {2} Linux\n{0}{2}[{1}{2}3{2}{0}]{1} {2} Android\n{0}{2}[{1}{2}{2}4{0}]{1} {2} Python\n{0}{2}[{1}{2}{2}5{0}]{1} {2} MacOS\n{0}{2}[{1}{2}{2}6{0}]{1} {2} Java\n{0}{2}[{1}{2}{2}7{0}]{1} {2} Apple_ios\n{0}{2}[{1}{2}{2}8{0}]{1} {2} Connect_Ngrok\n{0}{2}[{1}{2}{2}9{0}]{1} {2} Connect_LocalHost\n{0}{2}[{1}{2}{2}10{0}]{1} {2}Connect_MSF\n{0}{0}[{1}{2}0{0}]{1} {2} Exit\n\n{0}{2}RapidPayload:~#{1} '.format(cyan, end, bold))
     if select == '1':        
         type = input('{2}{1}\n\n{0}{2}[{1}{2}1{0}]{1} {2}windows/meterpreter/reverse_http\n{0}[{1}{2}2{0}]{1} {2}windows/meterpreter/reverse_https\n{0}[{1}{2}3{0}]{1} {2}windows/meterpreter/reverse_tcp\n{0}[{1}{2}4{0}]{1} {2}windows/meterpreter/bind_tcp\n{0}[{1}{2}5{0}]{1} {2}windows/shell/bind_tcp\n{0}[{1}{2}6{0}]{1} {2}windows/shell/reverse_tcp\n{0}[{1}{2}0{0}]{1} {2}Menu\n\n{0}{2}RapidPayload:~/Windows#{1} '.format(cyan, end, bold))
         if type == '0':
             RapidP()
         main('Windows', type)
     if select == '2':       
-        type = input('{2}{1}\n\n{0}{2}[{1}{2}1{0}]{1} {2}linux/x86/meterpreter/reverse_http\n{0}[{1}{2}2{0}]{1} {2}linux/x86/meterpreter/reverse_https\n{0}[{1}{2}3{0}]{1} {2}linux/x86/meterpreter/reverse_tcp{0}{1}\n{0}[{1}{2}4{0}]{1} {2}linux/x64/meterpreter/reverse_http{0}{1}\n{0}[{1}{2}5{0}]{1} {2}linux/x64/meterpreter/reverse_https{0}{1}\n{0}[{1}{2}6{0}]{1} {2}linux/x64/meterpreter/reverse_tcp\n{0}[{1}{2}7{0}]{1} {2}linux/x86/shell/reverse_tcp{0}\n{0}[{1}{2}8{0}]{1} {2}linux/x64/shell/bind_tcp\n{0}[{1}{2}9{0}]{1} {2}linux/x86/meterpreter/bind_tcp\n{0}[{1}{2}10{0}]{1} {2}linux/x64/meterpreter/bind_tcp\n{0}[{1}{2}11{0}]{1} {2}linux/x86/shell/bind_tcp\n{0}[{1}{2}12{0}]{1} {2}linux/x64/shell/reverse_tcp\n{0}[{1}{2}0{0}]{1} {2}Menu\n\n{0}{2}RapidPayload:~/Linux#{1} '.format(cyan, end, bold))
+        type = input('{2}{1}\n\n{0}{2}[{1}{2}1{0}]{1} {2} linux/x86/meterpreter/reverse_http\n{0}[{1}{2}2{0}]{1} {2} linux/x86/meterpreter/reverse_https\n{0}[{1}{2}3{0}]{1} {2} linux/x86/meterpreter/reverse_tcp{0}{1}\n{0}[{1}{2}4{0}]{1} {2} linux/x64/meterpreter/reverse_http{0}{1}\n{0}[{1}{2}5{0}]{1} {2} linux/x64/meterpreter/reverse_https{0}{1}\n{0}[{1}{2}6{0}]{1} {2} linux/x64/meterpreter/reverse_tcp\n{0}[{1}{2}7{0}]{1} {2} linux/x86/shell/reverse_tcp{0}\n{0}[{1}{2}8{0}]{1} {2} linux/x64/shell/bind_tcp\n{0}[{1}{2}9{0}]{1} {2} linux/x86/meterpreter/bind_tcp\n{0}[{1}{2}10{0}]{1} {2}linux/x64/meterpreter/bind_tcp\n{0}[{1}{2}11{0}]{1} {2}linux/x86/shell/bind_tcp\n{0}[{1}{2}12{0}]{1} {2}linux/x64/shell/reverse_tcp\n{0}[{1}{2}0{0}]{1} {2} Menu\n\n{0}{2}RapidPayload:~/Linux#{1} '.format(cyan, end, bold))
         if type == '0':
             RapidP()
         main('Linux', type)
