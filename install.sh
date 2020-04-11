@@ -2,5 +2,4 @@
 pip3 install -r requirements.txt
 python3 Server.py
 sudo chmod +x RapidPayload.py
-var=$(pwd)
-python  $var"/Image/requirements.py"
+apt-get install wine # install default  [ wine ]| [ wine64 ] 
