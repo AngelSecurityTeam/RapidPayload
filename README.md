@@ -12,6 +12,8 @@ Framework RapidPayload - Metasploit Payload Generator
  
  * Python3
  
+ * Wine
+ 
 <h3> Execution: </h3>
 
 * git clone https://github.com/AngelSecurityTeam/RapidPayload
