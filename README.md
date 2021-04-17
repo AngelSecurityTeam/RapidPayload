@@ -60,4 +60,4 @@ Framework RapidPayload - Metasploit Payload Generator
 
 <h3> Paypal Donations: </h3>
 
-* https://www.paypal.me/AngelSecurityTeam
+* https://www.paypal.com/paypalme/AngelSecTeam
